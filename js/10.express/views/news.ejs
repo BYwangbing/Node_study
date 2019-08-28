@@ -1,0 +1,22 @@
+<!--
+    @author BY
+    @date 2019-07-20 20:14
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <%- include common/header.ejs%>
+    <h2>你好 ejs view engine后台数据！</h2>
+    <ul>
+        <% for (var i=0; i<list.length; i++) { %>
+            <li><%=list[i]%></li>
+            <br>
+        <% } %>
+    </ul>
+</body>
+</html>

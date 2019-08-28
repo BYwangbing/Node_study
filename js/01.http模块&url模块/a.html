@@ -1,0 +1,37 @@
+<!--
+    @author BY
+    @date 2019-07-24 17:24
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a{
+            display: inline-block;
+            width: 1200px;
+            height: 45px;
+            background-color: #00b230;
+        }
+        span{
+            display: inline-block;
+            height: 45px;
+            width: 45px;
+            background-color: #00b4ef;
+        }
+    </style>
+</head>
+<body>
+<a id="test" href="https://fanyi.baidu.com/">
+    <span class="a">啦啦</span>
+</a>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $('a').on('click', function () {
+        alert('啦啦');
+        return false;
+    })
+</script>
+</body>
+</html>

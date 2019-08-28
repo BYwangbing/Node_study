@@ -1,0 +1,119 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrapper{
+	width: 372px;
+	margin: 0 auto;
+	position: absolute;
+	left: 40%;
+	top: 100px;
+}
+.wrapper span{
+	font-size: 24px;
+	color: #FFFFFF;
+	vertical-align: bottom;
+	text-shadow: 0 0 4px rgba(0,0,0,.3);
+}
+
+.app, .app img{width: 100%;}
+.q-login-modal{
+	position: absolute;
+	top: 195px;
+	left: 35%;
+	width: 372px;
+	height: 490px;
+	margin: 0 auto;
+	background-color: #FFF;
+}
+.q-layout-table{padding: 0 20px;}
+.q-layout-table span{
+	height: 60px;
+	line-height: 60px;
+	font-size: 22px;
+	font-weight: 400
+}
+.q-login-close{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 32px;
+	height: 32px;
+	line-height: 25px;
+	font-size: 48px;
+	color: #ccc;
+}
+.q-login-close:hover{
+	color: #fff;
+	cursor: pointer;
+	border-radius: 50%;
+	background-color: #3f9f5f;
+}
+.q-input-group{display: inline-block; height: 360px;}
+.q-country-code{
+	width: 78px;
+	line-height: 40px;
+	font-size: 14px;
+	margin: 0 20px;
+	text-align: center;
+	border: 1px solid #D7D7D7;
+}
+.q-input-phone{
+	position: absolute;
+	top: 60px;
+	right: 20px;
+	width: 245px; 
+	height: 40px;
+	border: 1px solid #D7D7D7;
+}
+.q-input-valid{
+	width: 222px; 
+	height: 40px;
+	margin: 20px 0 0 20px;
+	border: 1px solid #D7D7D7;
+}
+.q-input-group span{
+	float: right;
+	margin: 19px 20px 0 0;
+}
+.q-input-group button{
+	width: 100px; 
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	float: right;
+	border-radius: 3px;
+	margin: -40px 20px 0 0;
+	background-color: #3f9f5f;
+	border: #3f9f5f 1px solid;
+}
+.q-input-group button:hover{background-color: #5cad77;}
+.q-input-group .btn span{
+	line-height: 36px;
+	font-size: 16px;
+	color: #fff;
+	cursor: pointer;
+	background-color: #3f9f5f;
+}
+.bottom{
+	color: #959595;
+}
+.bottom .f14{
+	display: inline-block;
+	max-width: 70%;
+	font-size: 14px;
+	margin: 20px 0 0 20px;
+}
+.bottom .fr{
+	float: right;
+	margin: 20px 20px 0 0;
+	font-size: 14px;
+	line-height: 24px;
+}
+.bottom:hover{cursor: pointer;}
+.bottom a{
+	text-decoration: none;
+	color: #10B041;
+}
