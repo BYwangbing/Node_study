@@ -14,9 +14,20 @@ var app = new express();/*实例化*/
 
 //使用ejs模板引擎   默认找views这个目录
 app.set('view engine', 'ejs');
+// app.set('views', __dirname + '/views');
+
 //配置public目录为我们的静态资源目录
 app.use(express.static('public'));
 app.use('/upload',express.static('upload'));
+
+// 获取post
+var bodyParser = require('body-parser');
+// //配置body-parser中间件
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+
 // 获取post
 var multiparty = require('multiparty');  /*图片上传模块  即可以获取form表单的数据 也可以实现上传图片*/
 
@@ -63,7 +74,7 @@ app.get('/login', function (req, res) {
 app.post('/doLogin', function (req, res) {
     console.log(req.body); /*获取post提交的数据*/
     var username = req.body.username;
-    var password = md5(req.body.password);
+    var password = req.body.password;
     //1.获取数据
     //2.连接数据库查询数据
     DB.find('user', {

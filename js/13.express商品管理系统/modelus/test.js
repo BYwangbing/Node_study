@@ -8,7 +8,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var DbUrl = ' mongodb://127.0.0.1:27017/product';//连接数据库
 function __connect(callback) {
-    MongoClient.connect(DbUrl, { useNewUrlParser: true }, function (err, db) {
+    MongoClient.connect(DbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
         if (err) {
             console.log(err);
             console.log('数据库连接失败');

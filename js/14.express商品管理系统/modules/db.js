@@ -13,7 +13,7 @@ var ObjectID = require('mongodb').ObjectId;
 exports.ObjectID=ObjectID;
 // 定义全局变量
 function __connectDb(callback) {
-    MongoClient.connect(DbUrl, { useNewUrlParser: true }, function (err, db) {
+    MongoClient.connect(DbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
         if (err) {
             console.log('数据库连接失败');
             return;

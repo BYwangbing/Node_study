@@ -74,18 +74,20 @@ app.post('/doLogin', function (req, res) {
     var password = md5(req.body.password);
     //1.获取数据
     //2.连接数据库查询数据
-    MongoClient.connect(DbUrl, { useNewUrlParser:true }, function (err, db) {
+    MongoClient.connect(DbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
         if (err) {
             console.log(err);
             console.log('数据库连接失败');
             return;
         }
+        console.log('数据库连接成功');
         var my_db = db.db('product');
         //查询数据  {"username":req.body.username,"password":req.body.password}
         var result = my_db.collection('user').find({
             username: username,
             password: password
         });
+
         result.toArray(function (error, data) {
             console.log(data);
             if (data.length > 0){
@@ -114,7 +116,7 @@ app.get('/loginOut', function (req, res) {
 
 app.get('/product', function (req, res) {
     // 连接数据库查询数据
-    MongoClient.connect(DbUrl, { useNewUrlParser: true }, function (err, db) {
+    MongoClient.connect(DbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
         if(err){
             console.log(err);
             console.log('数据库连接失败');
@@ -126,7 +128,7 @@ app.get('/product', function (req, res) {
             if (error) {
                 console.log(error + '查找数据失败');
             }
-            console.log(data);
+            // console.log(data);
             db.close();
             res.render('product', {
                 list: data

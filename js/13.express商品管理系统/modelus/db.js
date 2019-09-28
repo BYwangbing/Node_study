@@ -6,14 +6,14 @@
 
  */
 // 数据库操作
-var MongoClient = require('mongodb').MongoClient;
+var MongoClient = require('mongodb').MongoClient; //引入模块
 var DbUrl = ' mongodb://127.0.0.1:27017/product';//连接数据库
 var ObjectID = require('mongodb').ObjectId;
 //暴露 ObjectID
 exports.ObjectID=ObjectID;
 // 定义全局变量
 function __connectDb(callback) {
-    MongoClient.connect(DbUrl, { useNewUrlParser: true }, function (err, db) {
+    MongoClient.connect(DbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
         if (err) {
             console.log('数据库连接失败');
             return;

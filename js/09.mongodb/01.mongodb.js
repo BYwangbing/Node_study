@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 
 app.get('/add', function (req, res) {
     // 连接数据库
-    MongoClient.connect(DBurl, { useNewUrlParser: true }, function (err, db) { //连接数据库
+    MongoClient.connect(DBurl, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) { //连接数据库
         //尝试 3.0 写法 成功
         // const my_db = db.db('需要引用的数据库名');
         // my_db.collection(collectionName);
@@ -56,7 +56,7 @@ app.get('/add', function (req, res) {
 app.get('/modify', function (req, res) {
    // res.send('修改数据成功');
    //  连接数据库
-    MongoClient.connect(DBurl, { useNewUrlParser: true }, function (err, db) {
+    MongoClient.connect(DBurl, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
         if (err) {
             console.log(err);
             console.log('数据库连接失败');
@@ -80,7 +80,7 @@ app.get('/delete', function (req, res) {
     // /delete?name=Tom
     var query = url.parse(req.url, true).query;//{ name: 'Tom' }
     var name = query.name;  //Tom
-    MongoClient.connect(DBurl, { useNewUrlParser: true }, function (err, db) {
+    MongoClient.connect(DBurl, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
         if (err) {
             console.log(err);
             console.log('数据库连接失败');
@@ -119,7 +119,7 @@ var findData = function(db, callback) {
 };
 app.get('/find', function (req, res) {
     // res.send('查找数据成功');
-    MongoClient.connect(DBurl, { useNewUrlParser: true }, function (err, db) {
+    MongoClient.connect(DBurl, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
         if (err) {
             console.log(err);
             console.log('数据库连接失败');
